@@ -17,8 +17,14 @@ color.h
 /Users/apple/Desktop/my_pathtracer/color.h
 vec3.h
 /Users/apple/Desktop/my_pathtracer/vec3.h
+ray.h
+/Users/apple/Desktop/my_pathtracer/ray.h
 iostream
 -
+
+/Users/apple/Desktop/my_pathtracer/ray.h
+vec3.h
+/Users/apple/Desktop/my_pathtracer/vec3.h
 
 /Users/apple/Desktop/my_pathtracer/vec3.h
 cmath

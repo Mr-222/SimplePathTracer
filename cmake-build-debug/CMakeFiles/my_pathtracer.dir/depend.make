@@ -3,5 +3,6 @@
 
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../color.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../main.cpp
+CMakeFiles/my_pathtracer.dir/main.cpp.o: ../ray.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../vec3.h
 
