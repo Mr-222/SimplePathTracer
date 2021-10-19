@@ -6,7 +6,23 @@
 
 #IncludeRegexTransform: 
 
+/Users/apple/Desktop/my_pathtracer/color.h
+vec3.h
+/Users/apple/Desktop/my_pathtracer/vec3.h
+iostream
+-
+
 /Users/apple/Desktop/my_pathtracer/main.cpp
+color.h
+/Users/apple/Desktop/my_pathtracer/color.h
+vec3.h
+/Users/apple/Desktop/my_pathtracer/vec3.h
+iostream
+-
+
+/Users/apple/Desktop/my_pathtracer/vec3.h
+cmath
+-
 iostream
 -
 
