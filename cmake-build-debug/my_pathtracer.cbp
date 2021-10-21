@@ -86,6 +86,9 @@
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/hittable.h">
 			<Option target="my_pathtracer"/>
 		</Unit>
+		<Unit filename="/Users/apple/Desktop/my_pathtracer/hittable_list.h">
+			<Option target="my_pathtracer"/>
+		</Unit>
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/main.cpp">
 			<Option target="my_pathtracer"/>
 		</Unit>
