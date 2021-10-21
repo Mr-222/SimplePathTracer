@@ -21,6 +21,8 @@ ray.h
 /Users/apple/Desktop/my_pathtracer/ray.h
 iostream
 -
+limits
+-
 
 /Users/apple/Desktop/my_pathtracer/ray.h
 vec3.h
