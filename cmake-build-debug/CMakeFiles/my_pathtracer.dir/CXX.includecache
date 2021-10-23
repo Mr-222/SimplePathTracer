@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/Users/apple/Desktop/my_pathtracer/camera.h
+rtweekend.h
+/Users/apple/Desktop/my_pathtracer/rtweekend.h
+
 /Users/apple/Desktop/my_pathtracer/color.h
 vec3.h
 /Users/apple/Desktop/my_pathtracer/vec3.h
@@ -33,6 +37,8 @@ hittable_list.h
 /Users/apple/Desktop/my_pathtracer/hittable_list.h
 sphere.h
 /Users/apple/Desktop/my_pathtracer/sphere.h
+camera.h
+/Users/apple/Desktop/my_pathtracer/camera.h
 iostream
 -
 
@@ -46,6 +52,8 @@ cmath
 limits
 -
 memory
+-
+random
 -
 ray.h
 /Users/apple/Desktop/my_pathtracer/ray.h
