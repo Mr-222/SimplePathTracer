@@ -6,6 +6,7 @@ CMakeFiles/my_pathtracer.dir/main.cpp.o: ../color.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../hittable.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../hittable_list.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../main.cpp
+CMakeFiles/my_pathtracer.dir/main.cpp.o: ../material.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../ray.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../rtweekend.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../sphere.h

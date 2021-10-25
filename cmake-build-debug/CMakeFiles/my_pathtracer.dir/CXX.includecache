@@ -17,8 +17,8 @@ iostream
 -
 
 /Users/apple/Desktop/my_pathtracer/hittable.h
-ray.h
-/Users/apple/Desktop/my_pathtracer/ray.h
+rtweekend.h
+/Users/apple/Desktop/my_pathtracer/rtweekend.h
 
 /Users/apple/Desktop/my_pathtracer/hittable_list.h
 hittable.h
@@ -39,8 +39,14 @@ sphere.h
 /Users/apple/Desktop/my_pathtracer/sphere.h
 camera.h
 /Users/apple/Desktop/my_pathtracer/camera.h
+material.h
+/Users/apple/Desktop/my_pathtracer/material.h
 iostream
 -
+
+/Users/apple/Desktop/my_pathtracer/material.h
+rtweekend.h
+/Users/apple/Desktop/my_pathtracer/rtweekend.h
 
 /Users/apple/Desktop/my_pathtracer/ray.h
 vec3.h

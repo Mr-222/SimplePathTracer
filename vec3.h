@@ -113,7 +113,7 @@ inline vec3 unit_vector(vec3 v) {
     return v / v.length();
 }
 
-inline vec3 random_int_unit_sphere() {
+inline vec3 random_in_unit_sphere() {
     while (true) {
         vec3 p = vec3::random(-1, 1);
         if (p.length_squared() >= 1) continue;
@@ -122,7 +122,7 @@ inline vec3 random_int_unit_sphere() {
 }
 
 inline vec3 random_unit_vector() {
-    return unit_vector(random_int_unit_sphere());
+    return unit_vector(random_in_unit_sphere());
 }
 
 vec3 reflect(const vec3& v, const vec3& n) {

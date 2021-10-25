@@ -7,6 +7,7 @@ CMakeFiles/my_pathtracer.dir/main.cpp.o
  /Users/apple/Desktop/my_pathtracer/hittable.h
  /Users/apple/Desktop/my_pathtracer/hittable_list.h
  /Users/apple/Desktop/my_pathtracer/main.cpp
+ /Users/apple/Desktop/my_pathtracer/material.h
  /Users/apple/Desktop/my_pathtracer/ray.h
  /Users/apple/Desktop/my_pathtracer/rtweekend.h
  /Users/apple/Desktop/my_pathtracer/sphere.h
