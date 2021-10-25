@@ -3,6 +3,8 @@
 
 #include "rtweekend.h"
 
+class material;
+
 struct hit_record {
     point3 p;
     vec3 normal;
