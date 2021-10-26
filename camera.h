@@ -15,7 +15,7 @@ public:
             double focus_dist
             ) {
         double theta = degrees_to_radians(vfov);
-        double h = tan(theta / 2);
+        double h = focus_dist * tan(theta / 2);
         double viewport_height = 2.0 * h;
         double viewport_width = aspect_ratio * viewport_height;
 
@@ -24,8 +24,8 @@ public:
         v = cross(w, u);
 
         origin = lookfrom;
-        horizontal = focus_dist * viewport_width * u;
-        vertical = focus_dist * viewport_height * v;
+        horizontal = viewport_width * u;
+        vertical = viewport_height * v;
         lower_left_corner = origin - horizontal/2 - vertical/2 - focus_dist*w;
 
         lens_radius = aperture / 2;
