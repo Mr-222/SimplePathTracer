@@ -77,13 +77,12 @@ color ray_color(const ray& r, const hittable& world, int depth) {
 int main() {
     // Image
     constexpr double aspect_ratio = 3.0 / 2.0;
-    constexpr int image_width = 1080;
+    constexpr int image_width = 400;
     constexpr int image_height = static_cast<int>(image_width / aspect_ratio);
-    constexpr int samples_per_pixel = 100;
+    constexpr int samples_per_pixel = 10;
     constexpr int max_depth = 50;
 
     // World
-    double R = cos(pi / 4.0);
     hittable_list world { random_scene() };
 
     // Camera

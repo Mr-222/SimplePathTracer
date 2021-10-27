@@ -15,7 +15,7 @@ public:
     explicit hittable_list(const shared_ptr<hittable>& object) { this->add(object); }
 
     void clear() { objects.clear(); }
-    void add(const shared_ptr<hittable>& object) { objects.emplace_back(object); }
+    void add(shared_ptr<hittable> object) { objects.emplace_back(object); }
 
     bool hit(const ray& r, double t_min, double t_max, hit_record& rec) const override;
 
