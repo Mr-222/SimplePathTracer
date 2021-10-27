@@ -35,7 +35,7 @@ inline double random_double(double min, double max) {
 //inline double random_double(double min, double max) {
 //    // Returns a random real in [min,max).
 //    static std::uniform_real_distribution<double> distribution(min, max);
-//    static std::mt19937 generator;
+//    static std::default_random_engine generator;
 //    return distribution(generator);
 //}
 
