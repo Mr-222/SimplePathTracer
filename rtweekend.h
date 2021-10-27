@@ -22,15 +22,17 @@ inline double degrees_to_radians(double degrees) {
 
 inline double random_double() {
     // Returns a random real in [0, 1).
+    static std::random_device rd;
     static std::uniform_real_distribution<double> distribution(0.0, 1.0);
-    static std::mt19937 generator;
+    static std::mt19937 generator(rd());
     return distribution(generator);
 }
 
 inline double random_double(double min, double max) {
     // Returns a random rela in [min, max).
+    static std::random_device rd;
     static std::uniform_real_distribution<double> distribution(min, max);
-    static std::mt19937 generator;
+    static std::mt19937 generator(rd());
     return distribution(generator);
 }
 
