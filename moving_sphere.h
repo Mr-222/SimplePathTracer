@@ -1,6 +1,7 @@
 #ifndef MOVING_SPHERE_H
 #define MOVING_SPHERE_H
 
+#include "aabb.h"
 #include "rtweekend.h"
 
 #include "hittable.h"
@@ -14,6 +15,8 @@ public:
     {}
 
     bool hit(const ray& r, double t_min, double t_max, hit_record& rec) const override;
+
+    bool bounding_box(double _time0, double _time1, aabb& output_box) const override;
 
     [[nodiscard]] point3 center(double time) const;
 
@@ -53,6 +56,19 @@ bool moving_sphere::hit(const ray &r, double t_min, double t_max, hit_record &re
 
 point3 moving_sphere::center(double time) const {
     return center0 + ((time - time0) / (time1 - time0)) * (center1 - center0);
+}
+
+bool moving_sphere::bounding_box(double _time0, double _time1, aabb &output_box) const {
+    aabb box0 {
+        center(_time0) - vec3(radius, radius, radius),
+        center(_time0) + vec3(radius, radius, radius)
+    };
+    aabb box1 {
+        center(_time1) - vec3(radius, radius, radius),
+        center(_time1) + vec3(radius, radius, radius)
+    };
+    output_box = aabb::surrounding_box(box0, box1);
+    return true;
 }
 
 #endif //MOVING_SPHERE_H

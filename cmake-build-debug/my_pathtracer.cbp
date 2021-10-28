@@ -83,6 +83,9 @@
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/aabb.h">
 			<Option target="my_pathtracer"/>
 		</Unit>
+		<Unit filename="/Users/apple/Desktop/my_pathtracer/bvh.h">
+			<Option target="my_pathtracer"/>
+		</Unit>
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/camera.h">
 			<Option target="my_pathtracer"/>
 		</Unit>
