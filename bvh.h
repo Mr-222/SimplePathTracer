@@ -36,7 +36,7 @@ bool bvh_node::hit(const ray &r, double t_min, double t_max, hit_record &rec) co
     bool hit_left = left->hit(r, t_min, t_max, rec);
     bool hit_right = right->hit(r, t_min, t_max, rec);
 
-    return hit_left or hit_right;
+    return hit_left || hit_right;
 }
 
 bool bvh_node::bounding_box(double time0, double time1, aabb &output_box) const {
