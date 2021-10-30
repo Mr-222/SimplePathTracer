@@ -116,6 +116,9 @@
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/sphere.h">
 			<Option target="my_pathtracer"/>
 		</Unit>
+		<Unit filename="/Users/apple/Desktop/my_pathtracer/texture.h">
+			<Option target="my_pathtracer"/>
+		</Unit>
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/vec3.h">
 			<Option target="my_pathtracer"/>
 		</Unit>
