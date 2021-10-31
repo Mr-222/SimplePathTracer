@@ -9,6 +9,17 @@
 
 #include <iostream>
 
+hittable_list two_spheres() {
+    hittable_list objects;
+
+    auto checker = make_shared<checker_texture>(color(0.2, 0.3, 0.1), color(0.9, 0.9, 0.9));
+
+    objects.add(make_shared<sphere>(point3(0, -10, 0), 10, make_shared<lambertian>(checker)));
+    objects.add(make_shared<sphere>(point3(0, 10, 0), 10, make_shared<lambertian>(checker)));
+
+    return objects;
+}
+
 hittable_list random_scene() {
     hittable_list world;
 
@@ -81,21 +92,43 @@ color ray_color(const ray& r, const hittable& world, int depth) {
 int main() {
     // Image
     constexpr double aspect_ratio = 16.0 / 9.0;
-    constexpr int image_width = 400;
-    constexpr int image_height = static_cast<int>(image_width / aspect_ratio);
-    constexpr int samples_per_pixel = 100;
+    constexpr int image_width = 1080;
+    constexpr int samples_per_pixel = 300;
     constexpr int max_depth = 50;
 
     // World
-    hittable_list world { random_scene() };
+    hittable_list world;
 
     // Camera
-    point3 lookfrom(13, 2, 3);
-    point3 lookat(0, 0, 0);
+    point3 lookfrom;
+    point3 lookat;
+    double vfov = 40.0;
+    double aperture = 0.0;
+
+    switch (0) {
+        case 1:
+            world = random_scene();
+            lookfrom = point3(13, 2, 3);
+            lookat = point3(0, 0, 0);
+            vfov = 20.0;
+            aperture = 0.1;
+            break;
+
+        default:
+        case 2:
+            world = two_spheres();
+            lookfrom = point3(13, 2, 3);
+            lookat = point3(0, 0, 0);
+            vfov = 20.0;
+            break;
+    }
+
+    //Camera
     vec3 vup(0, 1, 0);
     double dist_to_focus = 10.0;
-    double aperture = 0.1;
-    camera cam {lookfrom, lookat, vup, 20, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0};
+    int image_height = static_cast<int>(image_width / aspect_ratio);
+
+    camera cam { lookfrom, lookat, vup, vfov, aspect_ratio, aperture, dist_to_focus, 0.0, 1.0 };
 
     // Render
     std::cout << "P3\n" << image_width << " " << image_height << "\n255\n";
