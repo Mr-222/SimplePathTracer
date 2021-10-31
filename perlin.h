@@ -1,0 +1,64 @@
+#ifndef PERLIN_H
+#define PERLIN_H
+
+#include <array>
+#include "rtweekend.h"
+
+class perlin {
+public:
+    perlin() {
+        ranfloat = new double[point_count];
+        for (int i=0; i<point_count; ++i) {
+            ranfloat[i] = random_double();
+        }
+
+        perm_x = perlin_generate_perm();
+        perm_y = perlin_generate_perm();
+        perm_z = perlin_generate_perm();
+    }
+
+    ~perlin() {
+        delete[] ranfloat;
+        delete[] perm_x;
+        delete[] perm_y;
+        delete[] perm_z;
+    }
+
+    [[nodiscard]] double noise(const point3& p) const {
+        int i = static_cast<int>(4*p.x()) & 255;
+        int j = static_cast<int>(4*p.y()) & 255;
+        int k = static_cast<int>(4*p.z()) & 255;
+
+        return ranfloat[perm_x[i] ^ perm_y[j] ^ perm_z[k]];
+    }
+
+private:
+    static const int point_count = 256;
+    double* ranfloat;
+    int* perm_x;
+    int* perm_y;
+    int* perm_z;
+
+    static int* perlin_generate_perm() {
+        auto p = new std::array<int, point_count> {};
+
+        int j = 0;
+        std::for_each(p->begin(), p->end(), [&j](int& i) {
+            i = j;
+            j++;
+        });
+
+        permute(p->data(), point_count);
+
+        return p->data();
+    }
+
+    static void permute(int* p, int n) {
+        for (int i=n-1; i>0; i--) {
+            int target = random_int(0, i);
+            std::swap(p[i], p[target]);
+        }
+    }
+};
+
+#endif //PERLIN_H

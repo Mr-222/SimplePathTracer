@@ -107,6 +107,9 @@
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/moving_sphere.h">
 			<Option target="my_pathtracer"/>
 		</Unit>
+		<Unit filename="/Users/apple/Desktop/my_pathtracer/perlin.h">
+			<Option target="my_pathtracer"/>
+		</Unit>
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/ray.h">
 			<Option target="my_pathtracer"/>
 		</Unit>
