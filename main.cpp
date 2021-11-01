@@ -6,8 +6,22 @@
 #include "camera.h"
 #include "material.h"
 #include "moving_sphere.h"
+#include "aarect.h"
 
 #include <iostream>
+
+hittable_list simple_light() {
+    hittable_list objects;
+
+    auto pertext = make_shared<noise_texture>(4);
+    objects.add(make_shared<sphere>(point3(0, -1000, 0), 1000, make_shared<lambertian>(pertext)));
+    objects.add(make_shared<sphere>(point3(0, 2, 0), 2, make_shared<lambertian>(pertext)));
+
+    auto difflight = make_shared<diffuse_light>(color(4, 4, 4));
+    objects.add(make_shared<xy_rect>(3, 5, 1, 3, -2, difflight));
+
+    return objects;
+}
 
 hittable_list earth() {
     auto earth_texture = make_shared<image_texture>("earthmap.jpg");
@@ -112,7 +126,7 @@ int main() {
     // Image
     constexpr double aspect_ratio = 16.0 / 9.0;
     constexpr int image_width = 1080;
-    constexpr int samples_per_pixel = 300;
+    constexpr int samples_per_pixel = 400;
     constexpr int max_depth = 50;
 
     // World
@@ -161,7 +175,11 @@ int main() {
 
         default:
         case 5:
+            world = simple_light();
             background = color(0.0, 0.0, 0.0);
+            lookfrom = point3(26, 3, 6);
+            lookat = point3(0, 2, 0);
+            vfov = 20.0;
             break;
     }
 

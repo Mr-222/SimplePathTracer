@@ -100,7 +100,7 @@ private:
 
 class diffuse_light : public material {
 public:
-    explicit diffuse_light(shared_ptr<texture>  a) : emit(std::move(a)) {}
+    explicit diffuse_light(shared_ptr<texture> a) : emit(std::move(a)) {}
     explicit diffuse_light(const color& c) : emit(make_shared<solid_color>(c)) {}
 
     bool scatter(
