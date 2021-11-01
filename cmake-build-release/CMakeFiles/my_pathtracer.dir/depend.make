@@ -4,6 +4,7 @@
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../aabb.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../camera.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../color.h
+CMakeFiles/my_pathtracer.dir/main.cpp.o: ../external/stb_image.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../hittable.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../hittable_list.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../main.cpp
@@ -11,9 +12,9 @@ CMakeFiles/my_pathtracer.dir/main.cpp.o: ../material.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../moving_sphere.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../perlin.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../ray.h
+CMakeFiles/my_pathtracer.dir/main.cpp.o: ../rtw_stb_image.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../rtweekend.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../sphere.h
-CMakeFiles/my_pathtracer.dir/main.cpp.o: ../stb_image.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../texture.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../vec3.h
 

@@ -1,6 +1,8 @@
 #ifndef TEXTURE_H
 #define TEXTURE_H
 
+#include <utility>
+
 #include "rtweekend.h"
 #include "rtw_stb_image.h"
 #include "perlin.h"
@@ -30,7 +32,7 @@ public:
     checker_texture() = default;
 
     checker_texture(shared_ptr<texture> _even, shared_ptr<texture> _odd)
-        : even(_even), odd(_odd) {}
+        : even(std::move(_even)), odd(std::move(_odd)) {}
 
     checker_texture(const color& c1, const color& c2)
         : even(make_shared<solid_color>(c1)), odd(make_shared<solid_color>(c2)) {}

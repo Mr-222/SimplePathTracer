@@ -1,6 +1,8 @@
 #ifndef MATERIAL_H
 #define MATERIAL_H
 
+#include <utility>
+
 #include "rtweekend.h"
 #include "texture.h"
 
@@ -8,6 +10,9 @@ struct hit_record;
 
 class material {
 public:
+    [[nodiscard]] virtual color emitted(double u, double v, const point3& p) const {
+        return color(0, 0, 0);
+    }
     virtual bool scatter (
             const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered
     ) const = 0;
@@ -16,7 +21,7 @@ public:
 class lambertian : public material {
 public:
     explicit lambertian(const color& a) : albedo(make_shared<solid_color>(a)) {}
-    explicit lambertian(shared_ptr<texture> a) : albedo(a) {}
+    explicit lambertian(shared_ptr<texture> a) : albedo(std::move(a)) {}
 
     bool scatter(
             const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered
@@ -91,6 +96,25 @@ private:
         r0 = r0 * r0;
         return r0 + (1-r0) * pow((1 - cosine), 5);
     }
+};
+
+class diffuse_light : public material {
+public:
+    explicit diffuse_light(shared_ptr<texture>  a) : emit(std::move(a)) {}
+    explicit diffuse_light(const color& c) : emit(make_shared<solid_color>(c)) {}
+
+    bool scatter(
+            const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered
+    ) const override {
+        return false;
+    }
+
+    [[nodiscard]] color emitted(double u, double v, const point3& p) const override {
+        return emit->value(u, v, p);
+    }
+
+public:
+    shared_ptr<texture> emit;
 };
 
 #endif
