@@ -19,7 +19,7 @@ hittable_list simple_light() {
 
     auto difflight = make_shared<diffuse_light>(color(4, 4, 4));
     objects.add(make_shared<xy_rect>(3, 5, 1, 3, -2, difflight));
-    objects.add(make_shared<sphere>(point3(0, 9,0), 2, difflight));
+    objects.add(make_shared<sphere>(point3(0, 7,0), 1, difflight));
 
     return objects;
 }
