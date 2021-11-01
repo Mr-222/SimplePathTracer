@@ -14,5 +14,6 @@ CMakeFiles/my_pathtracer.dir/main.cpp.o
  /Users/apple/Desktop/my_pathtracer/ray.h
  /Users/apple/Desktop/my_pathtracer/rtweekend.h
  /Users/apple/Desktop/my_pathtracer/sphere.h
+ /Users/apple/Desktop/my_pathtracer/stb_image.h
  /Users/apple/Desktop/my_pathtracer/texture.h
  /Users/apple/Desktop/my_pathtracer/vec3.h

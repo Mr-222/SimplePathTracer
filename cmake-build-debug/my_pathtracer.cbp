@@ -113,6 +113,9 @@
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/ray.h">
 			<Option target="my_pathtracer"/>
 		</Unit>
+		<Unit filename="/Users/apple/Desktop/my_pathtracer/rtw_stb_image.h">
+			<Option target="my_pathtracer"/>
+		</Unit>
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/rtweekend.h">
 			<Option target="my_pathtracer"/>
 		</Unit>

@@ -13,6 +13,7 @@ CMakeFiles/my_pathtracer.dir/main.cpp.o: ../perlin.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../ray.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../rtweekend.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../sphere.h
+CMakeFiles/my_pathtracer.dir/main.cpp.o: ../stb_image.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../texture.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../vec3.h
 
