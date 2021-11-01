@@ -21,8 +21,6 @@ public:
         return true;
     }
 
-
-
 public:
     shared_ptr<material> mp;
     double x0, x1, y0, y1, k;
