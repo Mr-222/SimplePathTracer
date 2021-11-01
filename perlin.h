@@ -45,7 +45,7 @@ public:
         return perlin_interp(c, u, v, w);
     }
 
-    double turb(const point3& p, int depth=7) const {
+    [[nodiscard]] double turb(const point3& p, int depth=7) const {
         double accum = 0.0;
         point3 temp_p = p;
         double weight = 1.0;
@@ -60,7 +60,7 @@ public:
     }
 
 private:
-    static const int point_count = 256;
+    static constexpr int point_count = 256;
     vec3* ranvec;
     int* perm_x;
     int* perm_y;
