@@ -119,7 +119,7 @@ color ray_color(const ray& r, const color& background, const hittable& world, in
     if (!rec.mat_ptr->scatter(r, rec, attenuation, scattered))
         return emitted;
 
-    return emitted + attenuation * ray_color(r, background, world, depth);
+    return emitted + attenuation * ray_color(scattered, background, world, depth);
 }
 
 int main() {
