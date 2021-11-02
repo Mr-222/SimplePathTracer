@@ -34,6 +34,18 @@ vec3.h
 iostream
 -
 
+/Users/apple/Desktop/my_pathtracer/constant_medium.h
+utility
+-
+rtweekend.h
+/Users/apple/Desktop/my_pathtracer/rtweekend.h
+hittable.h
+/Users/apple/Desktop/my_pathtracer/hittable.h
+material.h
+/Users/apple/Desktop/my_pathtracer/material.h
+texture.h
+/Users/apple/Desktop/my_pathtracer/texture.h
+
 /Users/apple/Desktop/my_pathtracer/external/stb_image.h
 stb_image.h
 /Users/apple/Desktop/my_pathtracer/external/stb_image.h
@@ -101,6 +113,8 @@ aarect.h
 /Users/apple/Desktop/my_pathtracer/aarect.h
 box.h
 /Users/apple/Desktop/my_pathtracer/box.h
+constant_medium.h
+/Users/apple/Desktop/my_pathtracer/constant_medium.h
 iostream
 -
 
