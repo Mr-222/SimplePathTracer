@@ -96,8 +96,8 @@ rotate_y::rotate_y(shared_ptr<hittable> p, double angle) : ptr(std::move(p)) {
         for (int j=0; j<2; ++j)
             for (int k=0; k<2; ++k) {
                 double x = i*bbox.max().x() + (1-i)*bbox.min().x();
-                double y = i*bbox.max().y() + (1-i)*bbox.min().y();
-                double z = i*bbox.max().z() + (1-i)*bbox.min().z();
+                double y = j*bbox.max().y() + (1-j)*bbox.min().y();
+                double z = k*bbox.max().z() + (1-k)*bbox.min().z();
 
                 double newx = this->cos_theta*x + this->sin_theta*z;
                 double newz = -this->sin_theta*x + this->cos_theta*z;
@@ -121,7 +121,7 @@ bool rotate_y::hit(const ray &r, double t_min, double t_max, hit_record &rec) co
     };
     vec3 direction = {
             this->cos_theta * r.direction()[0] - this->sin_theta * r.direction()[2],
-            r.origin()[1],
+            r.direction()[1],
             this->sin_theta * r.direction()[0] + this->cos_theta * r.direction()[2]
     };
 

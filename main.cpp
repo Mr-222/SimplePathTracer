@@ -155,7 +155,7 @@ color ray_color(const ray& r, const color& background, const hittable& world, in
 int main() {
     // Image
     constexpr double aspect_ratio = 1.0;
-    constexpr int image_width = 600;
+    constexpr int image_width = 1080;
     constexpr int samples_per_pixel = 500;
     constexpr int max_depth = 50;
 
