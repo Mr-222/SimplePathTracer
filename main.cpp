@@ -13,7 +13,7 @@
 hittable_list cornell_box() {
     hittable_list objects;
 
-    auto red = make_shared<lambertian>(color(.65, .05, .05));
+    auto red   = make_shared<lambertian>(color(.65, .05, .05));
     auto white = make_shared<lambertian>(color(.73, .73, .73));
     auto green = make_shared<lambertian>(color(.12, .45, .15));
     auto light = make_shared<diffuse_light>(color(15, 15, 15));
@@ -144,8 +144,8 @@ color ray_color(const ray& r, const color& background, const hittable& world, in
 int main() {
     // Image
     constexpr double aspect_ratio = 1.0;
-    constexpr int image_width = 600;
-    constexpr int samples_per_pixel = 400;
+    constexpr int image_width = 200;
+    constexpr int samples_per_pixel = 50;
     constexpr int max_depth = 50;
 
     // World
