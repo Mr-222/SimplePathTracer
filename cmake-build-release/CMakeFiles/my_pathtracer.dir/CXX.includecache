@@ -16,6 +16,14 @@ rtweekend.h
 hittable.h
 /Users/apple/Desktop/my_pathtracer/hittable.h
 
+/Users/apple/Desktop/my_pathtracer/box.h
+rtweekend.h
+/Users/apple/Desktop/my_pathtracer/rtweekend.h
+aarect.h
+/Users/apple/Desktop/my_pathtracer/aarect.h
+hittable_list.h
+/Users/apple/Desktop/my_pathtracer/hittable_list.h
+
 /Users/apple/Desktop/my_pathtracer/camera.h
 rtweekend.h
 /Users/apple/Desktop/my_pathtracer/rtweekend.h
@@ -91,6 +99,8 @@ moving_sphere.h
 /Users/apple/Desktop/my_pathtracer/moving_sphere.h
 aarect.h
 /Users/apple/Desktop/my_pathtracer/aarect.h
+box.h
+/Users/apple/Desktop/my_pathtracer/box.h
 iostream
 -
 
