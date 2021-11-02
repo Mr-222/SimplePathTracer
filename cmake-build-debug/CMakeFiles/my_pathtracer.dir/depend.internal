@@ -4,8 +4,10 @@
 CMakeFiles/my_pathtracer.dir/main.cpp.o
  /Users/apple/Desktop/my_pathtracer/aabb.h
  /Users/apple/Desktop/my_pathtracer/aarect.h
+ /Users/apple/Desktop/my_pathtracer/box.h
  /Users/apple/Desktop/my_pathtracer/camera.h
  /Users/apple/Desktop/my_pathtracer/color.h
+ /Users/apple/Desktop/my_pathtracer/constant_medium.h
  /Users/apple/Desktop/my_pathtracer/external/stb_image.h
  /Users/apple/Desktop/my_pathtracer/hittable.h
  /Users/apple/Desktop/my_pathtracer/hittable_list.h
