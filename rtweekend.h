@@ -21,10 +21,14 @@ inline double degrees_to_radians(double degrees) {
 }
 
 inline double random_double() {
-    // Returns a random real in [0,1).
-    static std::uniform_real_distribution<double> distribution(0.0, 1.0);
+    // Returns a random real in [0, 1).
+    static std::once_flag flag;
     static std::mt19937 generator;
-    return distribution(generator);
+    std::call_once(flag ,[&]() {
+        generator.seed(std::random_device{}());
+    });
+    static std::uniform_real_distribution<double> dis(0, 1);
+    return dis(generator);
 }
 
 inline double random_double(double min, double max) {
