@@ -98,6 +98,9 @@
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/color.h">
 			<Option target="my_pathtracer"/>
 		</Unit>
+		<Unit filename="/Users/apple/Desktop/my_pathtracer/constant_medium.h">
+			<Option target="my_pathtracer"/>
+		</Unit>
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/hittable.h">
 			<Option target="my_pathtracer"/>
 		</Unit>
