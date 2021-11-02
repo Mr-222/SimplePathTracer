@@ -7,6 +7,7 @@
 #include "material.h"
 #include "moving_sphere.h"
 #include "aarect.h"
+#include "box.h"
 
 #include <iostream>
 
@@ -24,6 +25,8 @@ hittable_list cornell_box() {
     objects.add(make_shared<xz_rect>(0, 555, 0, 555, 0, white));
     objects.add(make_shared<xz_rect>(0, 555, 0, 555, 555, white));
     objects.add(make_shared<xy_rect>(0, 555, 0, 555, 555, white));
+    objects.add(make_shared<box>(point3(130, 0, 65), point3(295, 165, 230), white));
+    objects.add(make_shared<box>(point3(265, 0, 295), point3(430, 330, 460), white)));
 
     return objects;
 }
@@ -144,8 +147,8 @@ color ray_color(const ray& r, const color& background, const hittable& world, in
 int main() {
     // Image
     constexpr double aspect_ratio = 1.0;
-    constexpr int image_width = 200;
-    constexpr int samples_per_pixel = 50;
+    constexpr int image_width = 600;
+    constexpr int samples_per_pixel = 500;
     constexpr int max_depth = 50;
 
     // World

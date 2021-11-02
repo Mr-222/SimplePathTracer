@@ -86,6 +86,9 @@
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/aarect.h">
 			<Option target="my_pathtracer"/>
 		</Unit>
+		<Unit filename="/Users/apple/Desktop/my_pathtracer/box.h">
+			<Option target="my_pathtracer"/>
+		</Unit>
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/bvh.h">
 			<Option target="my_pathtracer"/>
 		</Unit>
