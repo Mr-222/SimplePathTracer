@@ -4,6 +4,7 @@
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../aabb.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../aarect.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../box.h
+CMakeFiles/my_pathtracer.dir/main.cpp.o: ../bvh.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../camera.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../color.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../constant_medium.h
