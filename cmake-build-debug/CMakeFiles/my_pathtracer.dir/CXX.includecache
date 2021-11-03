@@ -24,6 +24,14 @@ aarect.h
 hittable_list.h
 /Users/apple/Desktop/my_pathtracer/hittable_list.h
 
+/Users/apple/Desktop/my_pathtracer/bvh.h
+rtweekend.h
+/Users/apple/Desktop/my_pathtracer/rtweekend.h
+hittable.h
+/Users/apple/Desktop/my_pathtracer/hittable.h
+hittable_list.h
+/Users/apple/Desktop/my_pathtracer/hittable_list.h
+
 /Users/apple/Desktop/my_pathtracer/camera.h
 rtweekend.h
 /Users/apple/Desktop/my_pathtracer/rtweekend.h
@@ -115,6 +123,8 @@ box.h
 /Users/apple/Desktop/my_pathtracer/box.h
 constant_medium.h
 /Users/apple/Desktop/my_pathtracer/constant_medium.h
+bvh.h
+/Users/apple/Desktop/my_pathtracer/bvh.h
 iostream
 -
 
