@@ -14,8 +14,15 @@ public:
         return color(0, 0, 0);
     }
     virtual bool scatter (
-            const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered
-    ) const = 0;
+            const ray& r_in, const hit_record& rec, color& albedo, ray& scattered, double& pdf
+    ) const {
+        return false;
+    }
+    [[nodiscard]] virtual double scattering_pdf(
+            const ray& r_in, const hit_record& rec, const ray& scattered
+            ) const {
+        return 0;
+    }
 };
 
 class lambertian : public material {
@@ -24,7 +31,7 @@ public:
     explicit lambertian(shared_ptr<texture> a) : albedo(std::move(a)) {}
 
     bool scatter(
-            const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered
+            const ray& r_in, const hit_record& rec, color& alb, ray& scattered, double& pdf
             ) const override {
         vec3 scatter_direction = rec.normal + random_unit_vector();
 
@@ -32,9 +39,17 @@ public:
         if (scatter_direction.near_zero())
             scatter_direction = rec.normal;
 
-        scattered = ray(rec.p, scatter_direction, r_in.time());
-        attenuation = albedo->value(rec.u, rec.v, rec.p);
+        scattered = ray(rec.p, unit_vector(scatter_direction), r_in.time());
+        alb = albedo->value(rec.u, rec.v, rec.p);
+        pdf = dot(rec.normal, scattered.direction()) / pi;
         return true;
+    }
+
+    [[nodiscard]] double scattering_pdf(
+            const ray& r_in, const hit_record& rec, const ray& scattered
+            ) const override {
+        double cosine = dot(rec.normal, unit_vector(scattered.direction()));
+        return cosine < 0 ? 0 : cosine / pi;
     }
 
 public:
@@ -47,7 +62,7 @@ public:
 
     bool scatter(
             const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered
-            ) const override {
+            ) const  {
         vec3 reflected = reflect(unit_vector(r_in.direction()), rec.normal);
         scattered = ray(rec.p, reflected + fuzz * random_in_unit_sphere(), r_in.time());
         attenuation = albedo;
@@ -65,7 +80,7 @@ public:
 
     bool scatter(
             const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered
-            ) const override {
+            ) const  {
         attenuation = color(1.0, 1.0, 1.0);
         double refraction_ratio = rec.front_face ? (1.0/ir) : ir;
 
@@ -105,7 +120,7 @@ public:
 
     bool scatter(
             const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered
-    ) const override {
+    ) const {
         return false;
     }
 
@@ -124,7 +139,7 @@ public:
 
     bool scatter (
             const ray& r_in, const hit_record& rec, color& attenuation, ray& scattered
-    ) const override {
+    ) const  {
         scattered = ray { rec.p, random_in_unit_sphere(), r_in.time() };
         attenuation = albedo->value(rec.u, rec.v, rec.p);
         return true;
