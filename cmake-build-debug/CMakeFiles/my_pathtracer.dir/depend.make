@@ -14,6 +14,8 @@ CMakeFiles/my_pathtracer.dir/main.cpp.o: ../hittable_list.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../main.cpp
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../material.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../moving_sphere.h
+CMakeFiles/my_pathtracer.dir/main.cpp.o: ../onb.h
+CMakeFiles/my_pathtracer.dir/main.cpp.o: ../pdf.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../perlin.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../ray.h
 CMakeFiles/my_pathtracer.dir/main.cpp.o: ../rtw_stb_image.h

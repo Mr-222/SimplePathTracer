@@ -119,6 +119,9 @@
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/onb.h">
 			<Option target="my_pathtracer"/>
 		</Unit>
+		<Unit filename="/Users/apple/Desktop/my_pathtracer/pdf.h">
+			<Option target="my_pathtracer"/>
+		</Unit>
 		<Unit filename="/Users/apple/Desktop/my_pathtracer/perlin.h">
 			<Option target="my_pathtracer"/>
 		</Unit>

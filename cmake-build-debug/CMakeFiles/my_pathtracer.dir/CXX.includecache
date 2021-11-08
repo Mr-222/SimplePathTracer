@@ -125,6 +125,8 @@ constant_medium.h
 /Users/apple/Desktop/my_pathtracer/constant_medium.h
 bvh.h
 /Users/apple/Desktop/my_pathtracer/bvh.h
+pdf.h
+/Users/apple/Desktop/my_pathtracer/pdf.h
 iostream
 -
 
@@ -135,6 +137,8 @@ rtweekend.h
 /Users/apple/Desktop/my_pathtracer/rtweekend.h
 texture.h
 /Users/apple/Desktop/my_pathtracer/texture.h
+onb.h
+/Users/apple/Desktop/my_pathtracer/onb.h
 
 /Users/apple/Desktop/my_pathtracer/moving_sphere.h
 aabb.h
@@ -143,6 +147,16 @@ rtweekend.h
 /Users/apple/Desktop/my_pathtracer/rtweekend.h
 hittable.h
 /Users/apple/Desktop/my_pathtracer/hittable.h
+
+/Users/apple/Desktop/my_pathtracer/onb.h
+rtweekend.h
+/Users/apple/Desktop/my_pathtracer/rtweekend.h
+
+/Users/apple/Desktop/my_pathtracer/pdf.h
+rtweekend.h
+/Users/apple/Desktop/my_pathtracer/rtweekend.h
+onb.h
+/Users/apple/Desktop/my_pathtracer/onb.h
 
 /Users/apple/Desktop/my_pathtracer/perlin.h
 array
