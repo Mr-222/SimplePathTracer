@@ -5,6 +5,7 @@
 
 #include "rtweekend.h"
 #include "texture.h"
+#include "onb.h"
 
 struct hit_record;
 
@@ -33,15 +34,12 @@ public:
     bool scatter(
             const ray& r_in, const hit_record& rec, color& alb, ray& scattered, double& pdf
             ) const override {
-        vec3 scatter_direction = rec.normal + random_unit_vector();
-
-        // Catch degenerate scatter direction
-        if (scatter_direction.near_zero())
-            scatter_direction = rec.normal;
-
-        scattered = ray(rec.p, unit_vector(scatter_direction), r_in.time());
+        onb uvw;
+        uvw.build_from_w(rec.normal);
+        vec3 direction = uvw.local(random_cosine_direction());
+        scattered = ray(rec.p, unit_vector(direction), r_in.time());
         alb = albedo->value(rec.u, rec.v, rec.p);
-        pdf = dot(rec.normal, scattered.direction()) / pi;
+        pdf = dot(uvw.w(), scattered.direction()) / pi;
         return true;
     }
 
