@@ -16,6 +16,7 @@ CMakeFiles/my_pathtracer.dir/main.cpp.o
  /Users/apple/Desktop/my_pathtracer/material.h
  /Users/apple/Desktop/my_pathtracer/moving_sphere.h
  /Users/apple/Desktop/my_pathtracer/onb.h
+ /Users/apple/Desktop/my_pathtracer/pdf.h
  /Users/apple/Desktop/my_pathtracer/perlin.h
  /Users/apple/Desktop/my_pathtracer/ray.h
  /Users/apple/Desktop/my_pathtracer/rtw_stb_image.h
