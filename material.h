@@ -11,7 +11,7 @@ struct hit_record;
 
 class material {
 public:
-    [[nodiscard]] virtual color emitted(double u, double v, const point3& p) const {
+    [[nodiscard]] virtual color emitted(const ray& r_in, const hit_record& rec, double u, double v, const point3& p) const {
         return color(0, 0, 0);
     }
     virtual bool scatter (
@@ -122,8 +122,11 @@ public:
         return false;
     }
 
-    [[nodiscard]] color emitted(double u, double v, const point3& p) const override {
-        return emit->value(u, v, p);
+    [[nodiscard]] color emitted(const ray& r_in, const hit_record& rec, double u, double v, const point3& p) const override {
+        if (rec.front_face)
+            return emit->value(u, v, p);
+        else
+            return color(0, 0, 0);
     }
 
 public:
