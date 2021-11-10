@@ -120,14 +120,21 @@ hittable_list cornell_box() {
     objects.add(make_shared<xz_rect>(0, 555, 0, 555, 555, white));
     objects.add(make_shared<xy_rect>(0, 555, 0, 555, 555, white));
 
-    //shared_ptr<material> aluminum = make_shared<metal>(color(0.8, 0.85, 0.88), 0.0);
+
+//    shared_ptr<material> aluminum = make_shared<metal>(color(0.8, 0.85, 0.88), 0.05);
+//    shared_ptr<hittable> box1 = make_shared<box>(point3(0,0,0), point3(165,330,165), aluminum);
     shared_ptr<hittable> box1 = make_shared<box>(point3(0,0,0), point3(165,330,165), white);
     box1 = make_shared<rotate_y>(box1, 15);
     box1 = make_shared<translate>(box1, vec3(265, 0, 295));
     objects.add(box1);
 
+    shared_ptr<hittable> box2 = make_shared<box>(point3(0,0,0), point3(165,165,165), white);
+    box2 = make_shared<rotate_y>(box2, -18);
+    box2 = make_shared<translate>(box2, vec3(130,0,65));
+    objects.add(box2);
+
     auto glass = make_shared<dielectric>(1.5);
-    objects.add(make_shared<sphere>(point3(190,90,190), 90 , glass));
+    objects.add(make_shared<sphere>(point3(190,250,190), 60 , glass));
 
     return objects;
 }
@@ -316,8 +323,8 @@ int main() {
         case 6:
             world = cornell_box();
             aspect_ratio = 1.0;
-            image_width = 1200;
-            samples_per_pixel = 1000;
+            image_width = 500;
+            samples_per_pixel = 200;
             background = color(0,0,0);
             lookfrom = point3(278, 278, -800);
             lookat = point3(278, 278, 0);
@@ -348,12 +355,9 @@ int main() {
     }
 
     world = cornell_box();
-//    shared_ptr<hittable> lights =
-//            //  make_shared<xz_rect>(213, 343, 227, 332, 554, shared_ptr<material>());
-//            make_shared<sphere>(point3(190, 90, 190), 90, shared_ptr<material>());
     auto lights = make_shared<hittable_list>();
     lights->add(make_shared<xz_rect>(213, 343, 227, 332, 554, shared_ptr<material>()));
-    lights->add(make_shared<sphere>(point3(190, 90, 190), 90, shared_ptr<material>()));
+    lights->add(make_shared<sphere>(point3(190,250,190), 60, shared_ptr<material>()));
 
     //Camera
     vec3 vup(0, 1, 0);
