@@ -83,8 +83,8 @@ double sphere::pdf_value(const point3& o, const vec3& v) const {
     if (!this->hit(ray(o, v), 0.001, infinity, rec))
         return 0.0;
 
-    double cos_thetamax { sqrt(1 - this->radius*this->radius/(this->center-o).length_squared()) };
-    return 1.0 / 2 * pi * (1-cos_thetamax);
+    double cos_theta_max { sqrt(1 - this->radius*this->radius/(this->center-o).length_squared()) };
+    return 1.0 / (2 * pi * (1-cos_theta_max));
 }
 
 vec3 sphere::random(const point3& o) const {

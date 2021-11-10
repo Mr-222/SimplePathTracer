@@ -5,17 +5,15 @@
 #include "onb.h"
 
 inline vec3 random_to_sphere(double radius, double distance_squared) {
-    double r1 = random_double();
-    double r2 = random_double();
+    auto r1 = random_double();
+    auto r2 = random_double();
+    auto z = 1 + r2*(sqrt(1-radius*radius/distance_squared) - 1);
 
-    double cos_thetamax { sqrt(1 - radius*radius / distance_squared) };
-    double cos_theta = 1 + r2*(cos_thetamax - 1);
+    auto phi = 2*pi*r1;
+    auto x = cos(phi)*sqrt(1-z*z);
+    auto y = sin(phi)*sqrt(1-z*z);
 
-    double z = cos_theta;
-    double x = cos(2*pi*r1) * sqrt(1 - z*z);
-    double y = sin(2*pi*r1) * sqrt(1 - z*z);
-
-    return { x, y, z };
+    return vec3(x, y, z);
 }
 
 class pdf {

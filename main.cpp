@@ -316,8 +316,8 @@ int main() {
         case 6:
             world = cornell_box();
             aspect_ratio = 1.0;
-            image_width = 600;
-            samples_per_pixel = 100;
+            image_width = 1200;
+            samples_per_pixel = 1000;
             background = color(0,0,0);
             lookfrom = point3(278, 278, -800);
             lookat = point3(278, 278, 0);
@@ -353,7 +353,7 @@ int main() {
 //            make_shared<sphere>(point3(190, 90, 190), 90, shared_ptr<material>());
     auto lights = make_shared<hittable_list>();
     lights->add(make_shared<xz_rect>(213, 343, 227, 332, 554, shared_ptr<material>()));
-    //lights->add(make_shared<sphere>(point3(190, 90, 190), 90, shared_ptr<material>()));
+    lights->add(make_shared<sphere>(point3(190, 90, 190), 90, shared_ptr<material>()));
 
     //Camera
     vec3 vup(0, 1, 0);
