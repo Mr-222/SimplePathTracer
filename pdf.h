@@ -4,6 +4,20 @@
 #include "rtweekend.h"
 #include "onb.h"
 
+inline vec3 random_to_sphere(double radius, double distance_squared) {
+    double r1 = random_double();
+    double r2 = random_double();
+
+    double cos_thetamax { sqrt(1 - radius*radius / distance_squared) };
+    double cos_theta = 1 + r2*(cos_thetamax - 1);
+
+    double z = cos_theta;
+    double x = cos(2*pi*r1) * sqrt(1 - z*z);
+    double y = sin(2*pi*r1) * sqrt(1 - z*z);
+
+    return { x, y, z };
+}
+
 class pdf {
 public:
     virtual ~pdf() = default;

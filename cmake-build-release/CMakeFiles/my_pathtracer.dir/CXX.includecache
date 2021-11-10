@@ -139,6 +139,8 @@ texture.h
 /Users/apple/Desktop/my_pathtracer/texture.h
 onb.h
 /Users/apple/Desktop/my_pathtracer/onb.h
+pdf.h
+/Users/apple/Desktop/my_pathtracer/pdf.h
 
 /Users/apple/Desktop/my_pathtracer/moving_sphere.h
 aabb.h
@@ -193,6 +195,10 @@ hittable.h
 /Users/apple/Desktop/my_pathtracer/hittable.h
 vec3.h
 /Users/apple/Desktop/my_pathtracer/vec3.h
+onb.h
+/Users/apple/Desktop/my_pathtracer/onb.h
+pdf.h
+/Users/apple/Desktop/my_pathtracer/pdf.h
 
 /Users/apple/Desktop/my_pathtracer/texture.h
 utility

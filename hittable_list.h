@@ -20,6 +20,20 @@ public:
     bool hit(const ray& r, double t_min, double t_max, hit_record& rec) const override;
     bool bounding_box(double time0, double time1, aabb& output_box) const override;
 
+    [[nodiscard]] double pdf_value(const point3& o, const vec3& v) const override {
+        double weight = 1.0 / objects.size();
+        double sum = 0.0;
+
+        for (const auto& object : objects)
+            sum += weight * object->pdf_value(o, v);
+
+        return sum;
+    }
+    [[nodiscard]] vec3 random(const vec3& o) const override {
+        int int_size = static_cast<int>(objects.size());
+        return objects[random_int(0, int_size-1)]->random(o);
+    }
+
 public:
     std::vector<shared_ptr<hittable>> objects;
 };
